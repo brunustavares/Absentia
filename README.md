@@ -1,11 +1,13 @@
+<p align="center">
+  <img src="img/absentia.png" alt="GesTurmas Logo" width="300">
+</p>
+
 # Absentia
 Moodle block to identify dropout risk students and provide additional  contact info, via web service connected to the academic management system
 
 A Moodle block designed to help teachers and course managers identify students at risk of dropping out. It lists students who have not accessed a course for a specified period and provides their contact information, including an alternative email address fetched from an external academic management system via a web service.
 
 This block was originally developed for [Universidade Aberta (UAb)](https://portal.uab.pt/).
-
-![Absentia Block Screenshot](img/absentia.png)
 
 ## Features
 
@@ -79,16 +81,21 @@ When a teacher adds the "Absentia" block to a course page, they can configure se
 
 The block will only show content if the current date is within the configured academic semester and after any specified start delay.
 
-## Author
+## Licenses
 
-*   **Bruno Tavares**
-    *   Email: <brunustavares@gmail.com>
-    *   LinkedIn: https://www.linkedin.com/in/brunomastavares/
-
-## License
+**Author**: Bruno Tavares  
+**Contact**: [brunustavares@gmail.com](mailto:brunustavares@gmail.com)  
+**LinkedIn**: [https://www.linkedin.com/in/brunomastavares/](https://www.linkedin.com/in/brunomastavares/)  
+**Copyright**: 2019-2025 Bruno Tavares  
+**License**: GNU GPL v3 or later  
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+### Assets
+
+- **Source code**: GNU GPL v3 or later (© Bruno Tavares)  
+- **Images**: © Universidade Aberta, provided by the Digital Production Services, all rights reserved. Usage subject to the institution's policy.

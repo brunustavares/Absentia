@@ -1,0 +1,208 @@
+/**
+ * Absentia
+ * Moodle block to identify dropout-risk students and provide additional
+ * contact info, via web service connected to the academic management system.
+ * (developed for UAb - Universidade Aberta)
+ *
+ * @category   Moodle_Block
+ * @package    block_absentia
+ * @author     Bruno Tavares <brunustavares@gmail.com>
+ * @link       https://www.linkedin.com/in/brunomastavares/
+ * @copyright  Copyright (C) 2019-2025 Bruno Tavares
+ * @license    GNU General Public License v3 or later
+ *             https://www.gnu.org/licenses/gpl-3.0.html
+ * @version    2021030107
+ * @date       2019-08-22
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+ /* Font Awesome */
+    @import "https://use.fontawesome.com/releases/v5.8.2/css/all.css";
+ 
+/* bloco */
+    .block[data-block="absentia"] .card-body .content,   /*Moodle v3.6*/
+    .block[data-block="absentia"] .card-block .content { /*Moodle v3.3*/
+        font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif!important;
+        font-size: 13px!important;
+        padding: 1px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+        background: #f9f9f9!important;
+        border: 0px solid!important;
+
+    }
+
+/* tabelas */
+    #dtVScrollTbl,
+    #optTbl {
+        font-family: inherit!important;
+        width: 95%!important;
+        max-width: 95%!important;
+
+    }
+
+    #dtVScrollTbl {
+        border-collapse:separate;
+        border: solid;
+        border-width: 2px;
+        border-radius: 5px;
+        font-size: 12px!important;
+        text-align: center;
+
+    }
+
+    #dtVScrollTbl tr:nth-child(even) {
+        background-color: #ddd;
+
+    }
+
+    #dtVScrollTbl tr:nth-child(odd) {
+        background-color: #fff;
+
+    }
+ 
+    #optTbl td {
+        margin-top: 0px!important;
+        font-size: 13px!important;
+
+    }
+
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+        right: 1em!important;
+
+    }
+
+    table.collection thead th,
+    table.flexible thead th,
+    .table thead th,
+    .table-bordered td, 
+    .generaltable thead th {
+        vertical-align: middle!important;
+        font-size: 12px!important;
+
+    }
+
+    .table-bordered {
+        margin-bottom: 0px!important;
+
+    }
+
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        padding-top: 0px!important;
+        padding-left: 0px!important;
+        padding-bottom: 0!important;
+        margin-top: 0px!important;
+        float: inherit!important;
+        font-size: inherit!important;
+        text-align: center!important;
+        text-transform: lowercase!important;
+        
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        padding-top: 0px!important;
+        margin-right: 10px!important; /*Moodle v3.6*/
+        /*margin-right: 0px!important;  Moodle v3.3*/
+        margin-left: 0px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+        justify-content: flex-end!important;
+        
+    }
+    
+    div.dataTables_wrapper div.dataTables_filter {
+        display: none!important;
+
+    }
+
+    div.dataTables_wrapper div.dataTables_length select {
+        font-family: inherit!important;
+        font-size: inherit!important;
+
+    }
+
+    div.dataTables_scrollHeadInner {
+        margin-left: 9px!important;
+
+    }
+
+    .col-md-5,
+    .col-md-7 {
+        flex: 0 0 50%!important;
+        width: 100%!important;
+        max-width: 100%!important;
+
+    }
+
+    .col-md-6 {
+        flex: 0 0 100%!important;
+        width: 100%!important;
+        max-width: 100%!important;
+        text-align: center!important;
+
+    }
+
+    .col-sm-12 {
+        float: none!important;
+        width: 100%!important;
+        max-width: 100%!important;
+        
+    }
+
+/* botão p/ contactar estudantes */
+    .absentia_btn {
+        display: inline-table!important;
+        font-weight: normal!important;
+        color: #565656!important; 
+        border-color: #565656!important; 
+        background-color: transparent!important;
+        border: solid;
+        border-width: 2px;
+        border-radius: 5px;
+        width: 100%;
+        /* width: -webkit-fill-available; */
+
+    }
+
+/* separador */
+    hr {
+        margin-top: 0.5em!important;
+        margin-bottom: 0px!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        border-width: 1px!important;
+    }
+
+/* copyright */
+    a[title="desenvolvido por..."] { 
+        color: #f0f0f0!important; 
+
+    } 
+    
+    a[title="desenvolvido por..."]:hover { 
+        color: #a0a0a0!important; 
+
+    }

@@ -4,3 +4,4 @@
 # Ignore HTML and CSS files from GitHub Linguist language stats
 *.html linguist-vendored
 *.css linguist-vendored
+*.scss linguist-vendored

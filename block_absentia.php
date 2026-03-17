@@ -9,7 +9,7 @@
  * @package    block_absentia
  * @author     Bruno Tavares <brunustavares@gmail.com>
  * @link       https://www.linkedin.com/in/brunomastavares/
- * @copyright  Copyright (C) 2019-2025 Bruno Tavares
+ * @copyright  Copyright (C) 2019-present Bruno Tavares
  * @license    GNU General Public License v3 or later
  *             https://www.gnu.org/licenses/gpl-3.0.html
  * @version    2021030107
@@ -79,7 +79,7 @@ class block_absentia extends block_base {
         global $CFG, $DB, $COURSE, $USER;
 
         //verifica se o utilizador está devidamente autenticado e detém as permissões correctas
-        $context = get_context_instance(CONTEXT_COURSE,$COURSE->id);
+        $context = \core\context\course::instance($COURSE->id);
 
         if (!isloggedin()
             || !has_capability('moodle/course:update', $context)
